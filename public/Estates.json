@@ -1,0 +1,91 @@
+
+  
+
+  [
+    {
+      
+        "id": 1,
+        "estate_title": "Luxurious Villa in Suburban Paradise",
+        "segment_name": "Single-family homes",
+        "description": "Experience the epitome of luxury living in this stunning villa located in a serene suburban neighborhood.",
+        "price": "$1,500,000",
+        "status": "sale",
+        "area": "5000 sq ft",
+        "location": "Suburban Hills, Cityville",
+        "facilities": ["swimming pool", "garden", "gym", "home theater"],
+        "image": "https://i.ibb.co/RC7qDnB/lg.png"
+      }
+    ,
+    {
+      
+        "id": 2,
+        "estate_title": "Cozy Townhouse in Downtown",
+        "segment_name": "Townhouses",
+        "description": "Charming townhouse nestled in the heart of downtown, offering convenience and comfort.",
+        "price": "$600,000",
+        "status": "sale",
+        "area": "2000 sq ft",
+        "location": "Downtown District, Metropolis",
+        "facilities": ["rooftop terrace", "modern kitchen", "garage"],
+        "image": "https://i.ibb.co/1XhgHPT/dt.jpg"
+      }
+    ,
+    {
+      
+        "id": 3,
+        "estate_title": "Modern Apartment in Urban Hub",
+        "segment_name": "Apartments",
+        "description": "Stylish apartment offering contemporary living in the bustling urban center.",
+        "price": "$800,000",
+        "status": "sale",
+        "area": "1500 sq ft",
+        "location": "Downtown Loft District, Cityscape",
+        "facilities": ["open-plan layout", "balcony", "fitness center"],
+        "image": "https://i.ibb.co/y811G7v/14.jpg"
+      }
+    ,
+    {
+      
+        "id": 4,
+        "estate_title": "Student Housing Near Campus",
+        "segment_name": "Student housing",
+        "description": "Convenient student housing located within walking distance to campus.",
+        "price": "$400,000",
+        "status": "sale",
+        "area": "1200 sq ft",
+        "location": "University District, Collegeland",
+        "facilities": ["study lounge", "shared kitchen", "laundry facilities"],
+        "image": "https://i.ibb.co/vmqxm3w/ap22.jpg"
+      }
+    ,
+    {
+        
+          "id": 5,
+          "estate_title": "Spacious Loft Apartment in Arts District",
+          "segment_name": "Apartments",
+          "description": "Expansive loft apartment located in the vibrant arts district, featuring industrial-chic design and ample natural light.",
+          "price": "$950,000",
+          "status": "sale",
+          "area": "1800 sq ft",
+          "location": "Arts District, Cityscape",
+          "facilities": ["modern kitchen", "walk-in closet", "private balcony"],
+          "image": "https://i.ibb.co/4PcyCcc/ap.webp"
+        }
+      
+      ,
+    {
+      
+        "id": 6,
+        "estate_title": "Vacation Rental by the Beach",
+        "segment_name": "Vacation rentals",
+        "description": "Relaxing vacation rental with stunning ocean views, perfect for a getaway.",
+        "price": "$900 / night",
+        "status": "rent",
+        "area": "2000 sq ft",
+        "location": "Beachfront Paradise, Seaside Resort",
+        "facilities": ["private beach access", "terrace", "bbq area"],
+        "image": "https://i.ibb.co/k0sKq8v/paradisevalley.webp"
+      }
+    
+  ]
+  

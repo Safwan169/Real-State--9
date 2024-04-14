@@ -15,11 +15,15 @@ import 'swiper/css';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Estates from './Estates';
+import { useLoaderData, useRouteLoaderData } from 'react-router';
 const Home = () => {
-   
-       
+  const data = useLoaderData()
+  // console.log(data[0)
+
+
   // animateCSS('.my-element', 'bounce');
 
+  const {image,estate_title,segment_name,id}=data
 
 
   const progressCircle = useRef(null);
@@ -45,30 +49,34 @@ const Home = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        <SwiperSlide className=' border border-red-700 '><img className=' bg-cover h-[400px]' src="erasar.jpg" alt="" /></SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+      <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[0].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[1].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[2].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[3].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[4].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[5].image} alt="" /></SwiperSlide>
+  
         <div className="autoplay-progress h-3" slot="container-end">
-          <svg viewBox="0 0 10 10" ref={progressCircle}>
-        
+          <svg viewBox="0 0 48 48" ref={progressCircle}>
+
           </svg>
           <span ref={progressContent}></span>
         </div>
       </Swiper>
-        <Estates></Estates>
-       
+
+      <div className="lg:grid lg:grid-cols-3 justify-center gap-4 w-full lg:w-[1150px] my-10">
+
+        {
+          data.map((d,id) => <Estates idx={id} data={d}></Estates>)
+        }
+      </div>
+
     </>
   );
 }
 
 
-    
-  
+
+
 
 export default Home;

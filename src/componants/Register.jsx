@@ -78,8 +78,10 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
+                            <div className='flex'>
+                            <input type={eye?'text':'password'} name='password' placeholder="password" className="input w-full input-bordered" required /><div className='absolute mt-4 left-[325px]'>{eye?<p onClick={()=>setEye(!eye)}><FaEyeSlash /></p>:<p onClick={()=>setEye(!eye)}><FaEye /></p>}</div>
 
-                            <input type={eye?'text':'password'} name='password' placeholder="password" className="input input-bordered" required /> {eye}?<FaEye />:<FaEyeSlash />
+                            </div>
 
                             {
                                 okk && <p className=' ml-2 text-red-500'>{okk}</p>
@@ -87,7 +89,7 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">photoURL</span>
                             </label>
-                            <input type="url" name='photoURL' placeholder="Your photoURL" className="input input-bordered" required />
+                            <input type="url" name='photoURL' placeholder="Your photoURL" className="input input-bordered" required  />
                             <p className='mt-6 ml-3'>Already have an account?<Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/login'} >Sign In</Link ></p>
 
                         </div>

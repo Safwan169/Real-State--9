@@ -8,12 +8,16 @@ import { auth } from './firebase.config';
 import { GithubAuthProvider } from "firebase/auth";
 import { FaGoogle } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
+import { FaEye } from "react-icons/fa6";
+import { FaEyeSlash } from "react-icons/fa6";
+
+
 const Login = () => {
 
 
     const navigate = useNavigate()
-
+    const [eye, setEye] = useState(false)
     const [ok, setOk] = useState([])
     const [okk, setOkk] = useState()
     const info = useContext(myContext)
@@ -90,75 +94,77 @@ const Login = () => {
             })
     }
     return (
-        
 
-            <div>
-                <Helmet>
-            <title>Log In </title>
-        </Helmet>
-                <div className="hero min-h-screen bg-base-200">
-                    <div className="hero-content flex-col lg:flex-row-reverse">
 
-                        <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
-                            <form onSubmit={handleSubmit} className="card-body">
-                                <div className="form-control">
+        <div>
+            <Helmet>
+                <title>Log In </title>
+            </Helmet>
+            <div className="hero min-h-screen bg-base-200">
+                <div className="hero-content flex-col lg:flex-row-reverse">
 
-                                    <label className="label">
-                                        <span className="label-text">Email</span>
-                                    </label>
-                                    <input type="email" name='email' placeholder="email" className="input input-bordered" required />
-                                    {/* {
+                    <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
+                        <form onSubmit={handleSubmit} className="card-body">
+                            <div className="form-control">
+
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                {/* {
                                 ok && <p className=' ml-3 text-red-500'>{ok}</p>
                             } */}
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+
+                                <div className='flex'>
+                                    <input type={eye ? 'text' : 'password'} name='password' placeholder="password" className="input w-full input-bordered" required /><div className='absolute mt-4 left-[325px]'>{eye ? <p onClick={() => setEye(!eye)}><FaEyeSlash /></p> : <p onClick={() => setEye(!eye)}><FaEye /></p>}</div>
+
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-
-                                    <input type="password" name='password' placeholder="password" className="input input-bordered" required />
-
-                                    {/* {
+                                {/* {
                                 okk && <p className=' ml-2 text-red-500'>{okk}</p>
                             } */}
 
-                                    <p className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Sign Up </Link></p>
+                                <p className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Sign Up </Link></p>
 
-                                </div>
-                                <div className="form-control mt-4">
-                                    <button className="btn btn-primary">Sign In</button>
+                            </div>
+                            <div className="form-control mt-4">
+                                <button className="btn btn-primary">Sign In</button>
 
-                                </div>
+                            </div>
 
-                                <Toaster toastOptions={{
-                                    className: '',
-                                    style: {
-                                        marginTop: '100px',
-                                        // marginRight: '70px',
-                                        fontWeight: 'bolder',
-                                        border: '1px solid red'
-                                    },
-                                }}
-                                    position="top-center"
-                                    reverseOrder={false}
+                            <Toaster toastOptions={{
+                                className: '',
+                                style: {
+                                    marginTop: '100px',
+                                    // marginRight: '70px',
+                                    fontWeight: 'bolder',
+                                    border: '1px solid red'
+                                },
+                            }}
+                                position="top-center"
+                                reverseOrder={false}
 
-                                />
+                            />
 
-                                <div className="flex mt-4 justify-around">
-                                    <button onClick={() => google()} className="btn bg-red-500 text-white font-semibold"><FaGoogle />+ Google</button>
-                                    <button onClick={() => git()} className="btn bg-black text-white font-semibold "> <FaGithub /> GitHub</button>
-                                    {/* <button onClick={()=>fb()} className="btn bg-blue-500 text-white font-semibold "> fb</button> */}
+                            <div className="flex mt-4 justify-around">
+                                <button onClick={() => google()} className="btn bg-red-500 text-white font-semibold"><FaGoogle />+ Google</button>
+                                <button onClick={() => git()} className="btn bg-black text-white font-semibold "> <FaGithub /> GitHub</button>
+                                {/* <button onClick={()=>fb()} className="btn bg-blue-500 text-white font-semibold "> fb</button> */}
 
-                                </div>
+                            </div>
 
-                            </form>
-                        </div>
+                        </form>
                     </div>
-
                 </div>
 
-
             </div>
+
+
+        </div>
 
     )
 

@@ -16,6 +16,7 @@ import 'swiper/css';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import Estates from './Estates';
 import { useLoaderData, useRouteLoaderData } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 const Home = () => {
   const data = useLoaderData()
   // console.log(data[0)
@@ -23,7 +24,7 @@ const Home = () => {
 
   // animateCSS('.my-element', 'bounce');
 
-  const {image,estate_title,segment_name,id}=data
+  const { image, estate_title, segment_name, id } = data
 
 
   const progressCircle = useRef(null);
@@ -34,6 +35,9 @@ const Home = () => {
   };
   return (
     <>
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -49,13 +53,13 @@ const Home = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-      <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[0].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[0].image} alt="" /></SwiperSlide>
         <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[1].image} alt="" /></SwiperSlide>
         <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[2].image} alt="" /></SwiperSlide>
         <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[3].image} alt="" /></SwiperSlide>
         <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[4].image} alt="" /></SwiperSlide>
         <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[5].image} alt="" /></SwiperSlide>
-  
+
         <div className="autoplay-progress h-3" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
 
@@ -67,7 +71,7 @@ const Home = () => {
       <div className="lg:grid lg:grid-cols-3 justify-center gap-4 w-full lg:w-[1150px] my-10">
 
         {
-          data.map((d,id) => <Estates idx={id} data={d}></Estates>)
+          data.map((d, id) => <Estates idx={id} data={d}></Estates>)
         }
       </div>
 

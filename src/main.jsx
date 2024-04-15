@@ -12,6 +12,8 @@ import Register from './componants/Register.jsx';
 import Login from './componants/Login.jsx';
 import Details from './componants/Details.jsx';
 import All from './componants/All.jsx';
+import Anotherlogin from './componants/Anotherlogin.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 
 
 const router = createBrowserRouter([
@@ -35,6 +37,11 @@ const router = createBrowserRouter([
 
       element: <Details></Details>
     }
+    , {
+      path: "/an",
+
+      element: <Anotherlogin></Anotherlogin>
+    }
     ]
 
   },
@@ -47,9 +54,11 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <All>
+   <HelmetProvider>
+   <All>
       <RouterProvider router={router} />
 
     </All>
+   </HelmetProvider>
   </React.StrictMode>,
 )

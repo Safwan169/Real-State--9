@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { myContext } from './All';
-import { Navigate, useNavigate } from 'react-router';
-import { Navigation } from 'swiper/modules';
+import { FaEye } from "react-icons/fa6";
+import 'animate.css'
+import toast, { Toaster } from 'react-hot-toast';
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
-    const navigate = useNavigate()
+    const [eye,setEye]=useState(false)
     const [ok, setOk] = useState([])
     const [okk, setOkk] = useState()
     const info = useContext(myContext)
@@ -15,22 +19,20 @@ const Register = () => {
         const email = (e.target.email.value)
         const password = (e.target.password.value)
         setOkk('')
-
-        if (password.length < 6 ) {
+        setOk('')
+        if (password.length < 6) {
             setOkk('your password must be 6 letters')
             return
-            
         }
-        else if(!/[A-Z]/.test(password)){
-            setOkk('must be upper case')
+        else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
+            setOkk('Password must include both uppercase and lowercase letters')
             return
         }
         console.log(ok)
         createUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
-                setOk('Successfully Register')
-                navigate('/')
+                toast.success('You have successfully registered')
 
 
             })
@@ -49,38 +51,67 @@ const Register = () => {
 
 
         <div className="hero min-h-screen bg-base-200">
+
+
+            <Helmet>
+                <title>Register </title>
+            </Helmet>
+
             <div className="hero-content flex-col lg:flex-row-reverse">
 
-                <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Name</span>
+                            </label>
+                            <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                            {
+                                ok && <p className=' ml-3 text-red-500'>{ok}</p>
+                            }
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+
+                            <input type={eye?'text':'password'} name='password' placeholder="password" className="input input-bordered" required /> {eye}?<FaEye />:<FaEyeSlash />
+
                             {
-                                okk && <p>{okk}</p>
+                                okk && <p className=' ml-2 text-red-500'>{okk}</p>
                             }
                             <label className="label">
-                                <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
+                                <span className="label-text">photoURL</span>
                             </label>
+                            <input type="url" name='photoURL' placeholder="Your photoURL" className="input input-bordered" required />
+                            <p className='mt-6 ml-3'>Already have an account?<Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/login'} >Sign In</Link ></p>
+
                         </div>
-                        <div className="form-control mt-6">
-                            <button className="btn btn-primary">Login</button>
+                        <div className="form-control mt-4">
+                            <button className="btn btn-primary">Sign up</button>
+
                         </div>
-                        {ok && <p className='text-green'>{ok}</p>
-           }
+                        <Toaster toastOptions={{
+                            className: '',
+                            style: {
+                                marginTop: '50px',
+                                marginRight: '70px',
+                                fontWeight: 'bolder'
+                            },
+                        }}
+                            position="top-right"
+                            reverseOrder={false}
+
+                        />
+
                     </form>
                 </div>
             </div>
-           
+
         </div>
 
     );

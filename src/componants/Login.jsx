@@ -33,7 +33,7 @@ const Login = () => {
             .catch((error) => {
                 console.log(error.message)
             })
-        console.log(google)
+        // console.log(google)
     }
     // const fb=()=>{
     //     const provider1=new FacebookAuthProvider()
@@ -84,9 +84,9 @@ const Login = () => {
 
             })
             .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorMessage)
+                // const errorCode = error.code;
+                // const errorMessage = error.message;
+                // console.log(errorMessage)
                 toast.error('Incorrect email or password')
 
 
@@ -128,28 +128,21 @@ const Login = () => {
                                 okk && <p className=' ml-2 text-red-500'>{okk}</p>
                             } */}
 
-                                <p className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Sign Up </Link></p>
+                                <p className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Register </Link></p>
 
                             </div>
                             <div className="form-control mt-4">
-                                <button className="btn btn-primary">Sign In</button>
+                                <button className="btn btn-primary">Log In</button>
 
                             </div>
-
-                            <Toaster toastOptions={{
-                                className: '',
-                                style: {
-                                    marginTop: '100px',
-                                    // marginRight: '70px',
-                                    fontWeight: 'bolder',
-                                    border: '1px solid red'
-                                },
-                            }}
+                            <div>
+                            <Toaster
                                 position="top-center"
                                 reverseOrder={false}
-
                             />
 
+                            </div>
+                           
                             <div className="flex mt-4 justify-around">
                                 <button onClick={() => google()} className="btn bg-red-500 text-white font-semibold"><FaGoogle />+ Google</button>
                                 <button onClick={() => git()} className="btn bg-black text-white font-semibold "> <FaGithub /> GitHub</button>

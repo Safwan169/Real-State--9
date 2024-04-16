@@ -17,6 +17,8 @@ import { HelmetProvider } from 'react-helmet-async';
 import PrivateRoute from './componants/PrivateRoute.jsx';
 import User from './componants/User.jsx';
 import Update from './componants/Update.jsx';
+import Privat2 from './componants/Private2.jsx';
+import Private2 from './componants/Private2.jsx';
 
 
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
     }
       , {
       path: "/register",
-      element: <Register></Register>
+      element: <Private2><Register></Register></Private2>
     }, {
       path: "/data/:id",
       loader: () => fetch("/Estates.json"),
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
       element: <PrivateRoute><Details></Details></PrivateRoute>
     },{
       path: "/login",
-      element: <Login></Login>
+      element: <Private2><Login></Login></Private2>
     }, 
     , {
       path: "/an",
@@ -48,12 +50,12 @@ const router = createBrowserRouter([
     , {
       path: "/user",
 
-      element: <User></User>
+      element: <PrivateRoute> <User></User> </PrivateRoute>
     }
     , {
       path: "/update",
 
-      element: <Update></Update>
+      element: <PrivateRoute> <Update></Update> </PrivateRoute>
     }
     ]
 

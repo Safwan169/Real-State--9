@@ -5,7 +5,7 @@ import Footer from './Footer';
 
 const Router = () => {
     return (
-        <div className='lg:w-[1150px] mx-auto mt-4'>
+        <div className='lg:w-full  overflow-y-hidden  mx-auto mt-4'>
             <Navbar></Navbar>
             <Outlet></Outlet>
             <Footer></Footer>

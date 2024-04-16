@@ -12,8 +12,18 @@ const Navbar = () => {
 
     const auth = getAuth();
     signOut(auth).then(() => {
-      console.log('sign out hoisa ')
-      toast.success('You have been successfully logged out')
+      // console.log('sign out hoisa ')
+      // toast.success('You have been successfully logged out')
+      toast.success('You have been successfully logged out', {
+        position: 'top-center',
+        style: {
+          marginTop: '80px',
+          marginLeft: '70px',
+
+          border: '1px solid green',
+
+        }
+      })
 
     }).catch((error) => {
     });
@@ -27,14 +37,16 @@ const Navbar = () => {
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })}>Home</NavLink></li>
 
-    <li>
-      <NavLink to={'/register'} style={({ isActive }) => ({
-        background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
-      })}>Register</NavLink>
-    </li>
-    <li><NavLink to={'/login'} style={({ isActive }) => ({
+   {
+    user ?"":<div className="flex">  <li>
+    <NavLink to={'/register'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
-    })} >Log In</NavLink></li>
+    })}>Register</NavLink>
+  </li>
+  <li><NavLink to={'/login'} style={({ isActive }) => ({
+    background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
+  })} >Log In</NavLink></li></div>
+   }
     {user && <div className="lg:flex"> <li><NavLink to={'/user'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })} >User Profile</NavLink></li>
@@ -44,17 +56,18 @@ const Navbar = () => {
   </>
   return (
     <div className="navbar bg-base-100">
+      <Toaster></Toaster>
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-           
+
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </div>
           <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             {nav}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">LivingSpaces</a>
+        <a className="btn btn-ghost text-xl"><img className="w-10 h-full" src="/logo2-removebg-preview.png" alt="" /> LivingSpaces</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -71,7 +84,8 @@ const Navbar = () => {
           user ? <Link ><button onClick={() => signOutt()} className="btn">Log out</button></Link> : <Link to={'/login'}><button>Log in</button></Link>
         }
       </div>
-      <Toaster toastOptions={{
+      {/* <Toaster></Toaster> */}
+      {/* <Toaster toastOptions={{
         className: '',
         style: {
           marginTop: '50px',
@@ -82,7 +96,7 @@ const Navbar = () => {
         position="top-right"
         reverseOrder={false}
 
-      />
+      /> */}
     </div>
   );
 };

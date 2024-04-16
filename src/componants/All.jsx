@@ -11,9 +11,10 @@ const All = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState()
     const [dep, setDep] = useState(false)
+    const [dep2, setDep2] = useState(false)
 
 
-    const createUser = (email, password, Name, photoURL) => {
+    const createUser = (email, password) => {
 
         return (createUserWithEmailAndPassword(auth, email, password))
 
@@ -30,27 +31,34 @@ const All = ({ children }) => {
         return signInWithPopup(auth)
     }
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+    //    const unSubscribe=
+       onAuthStateChanged(auth, (user) => {
             if (user) {
                 console.log(user)
+                setLoading(false)
 
                 setUser(user)
-                setLoading(false)
             } else {
                 // User is signed out
                 // ...
                 console.log('kao nai')
+                setLoading(false)
+
                 setUser(false)
             }
         });
-    }, [dep])
+//    return unSubscribe
+    }, [dep],[dep2])
     const authInfo = {
         createUser,
         signInUser,
         google,
         user,
+        dep2,
         setDep,
-        loading
+        setDep2,
+        loading,
+        setLoading
     }
     return (
         <myContext.Provider value={authInfo}>

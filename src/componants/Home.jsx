@@ -53,12 +53,12 @@ const Home = () => {
         onAutoplayTimeLeft={onAutoplayTimeLeft}
         className="mySwiper"
       >
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[0].image} alt="" /></SwiperSlide>
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[1].image} alt="" /></SwiperSlide>
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[2].image} alt="" /></SwiperSlide>
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[3].image} alt="" /></SwiperSlide>
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[4].image} alt="" /></SwiperSlide>
-        <SwiperSlide className='  '><img className='rounded-2xl w-full bg-cover h-[500px]' src={data[5].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[0].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[1].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[2].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[3].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[4].image} alt="" /></SwiperSlide>
+        <SwiperSlide className='  '><img className=' w-full bg-cover h-[550px]' src={data[5].image} alt="" /></SwiperSlide>
 
         <div className="autoplay-progress h-3" slot="container-end">
           <svg viewBox="0 0 48 48" ref={progressCircle}>
@@ -68,7 +68,7 @@ const Home = () => {
         </div>
       </Swiper>
 
-      <div className="lg:grid lg:grid-cols-3 justify-center gap-4 w-full lg:w-[1150px] my-10">
+      <div className="lg:grid lg:grid-cols-3 justify-center gap-4 w-full lg:w-[1250px] mx-auto my-10">
 
         {
           data.map((d, id) => <Estates idx={id} data={d}></Estates>)

@@ -52,6 +52,7 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(() => {
                 navigate('/')
+                
             })
             .catch((error) => {
                 console.log(error.massage)
@@ -66,15 +67,7 @@ const Login = () => {
         const password = (e.target.password.value)
         setOkk('')
         setOk('')
-        // if (password.length < 6) {
-        //     setOkk('your password must be 6 letters')
-        //     return
-        // }
-        // else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password)) {
-        //     setOkk('Password must include both uppercase and lowercase letters')
-        //     return
-        // }
-        // console.log(ok)
+      
         signInUser(email, password)
             .then((userCredential) => {
                 const user = userCredential.user;
@@ -84,10 +77,16 @@ const Login = () => {
 
             })
             .catch((error) => {
-                // const errorCode = error.code;
-                // const errorMessage = error.message;
-                // console.log(errorMessage)
-                toast.error('Incorrect email or password')
+                toast.error('Incorrect email or password',{
+                    position:'top-center',
+                    style:{
+                        marginTop:'80px',
+                    marginLeft:'10px',
+
+                    border:'1px solid red',
+                    
+                }})
+                // toast.error('Incorrect email or password')
 
 
 
@@ -136,10 +135,10 @@ const Login = () => {
 
                             </div>
                             <div>
-                            <Toaster
+                            {/* <Toaster
                                 position="top-center"
                                 reverseOrder={false}
-                            />
+                            /> */}
 
                             </div>
                            

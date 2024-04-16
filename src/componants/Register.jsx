@@ -14,7 +14,7 @@ const Register = () => {
     const [ok, setOk] = useState([])
     const [okk, setOkk] = useState()
     const info = useContext(myContext)
-    const { createUser,setDep } = info
+    const { createUser,setDep ,user} = info
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -25,13 +25,14 @@ const Register = () => {
         
         setOkk('')
         setOk('')
+    
         if (password.length < 6) {
             // setOkk('your password must be 6 letters')
             toast.error('your password must be 6 letters',{
                 position:'top-center',
                 style:{
                     marginTop:'80px',
-                    marginLeft:'70px',
+                    marginLeft:'15px',
                 border:'1px solid red',
                 
             }})
@@ -43,7 +44,7 @@ const Register = () => {
                 position:'top-center',
                 style:{
                     marginTop:'80px',
-                    marginLeft:'70px',
+                    marginLeft:'5px',
                     textAlign:'center',
                 border:'1px solid red',
                 
@@ -60,7 +61,7 @@ const Register = () => {
                     position:'top-center',
                     style:{
                         marginTop:'80px',
-                    marginLeft:'70px',
+                    marginLeft:'10px',
 
                     border:'1px solid green',
                     
@@ -72,7 +73,6 @@ const Register = () => {
                   }).then((e) => {
                     // Profile updated!
                     console.log('update hoisa',e)
-                //  setUser(user)
                 setDep(true)
     
                     
@@ -92,7 +92,7 @@ const Register = () => {
                     position:'top-center',
                     style:{
                         marginTop:'80px',
-                    marginLeft:'70px',
+                    marginLeft:'10px',
 
                     border:'1px solid red',
                     
@@ -157,7 +157,7 @@ const Register = () => {
                         </div>
                         
                        
-
+                            {/* <Toaster></Toaster> */}
                     </form>
                 </div>
             </div>

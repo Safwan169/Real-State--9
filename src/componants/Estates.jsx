@@ -46,7 +46,7 @@ const Estates = ({ data }) => {
                             <CiLocationOn className="mt-1 text-black" />
                             <span>Location : {location}</span>
                         </div>
-                        <div className="flex mt-3  justify-end w-[350px] 0 text-green-500 font-bold">
+                        <div data-aos="fade-down" className="flex mt-3  justify-end w-[350px] 0 text-green-500 font-bold">
                             <button onClick={()=>details()} className="btn bg-orange-500 rounded-2xl text-white hover:bg-orange-600 font-semibold">view Details</button>
                         </div>
 

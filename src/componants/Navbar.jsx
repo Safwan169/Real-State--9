@@ -33,24 +33,22 @@ const Navbar = () => {
   console.log(user)
 
   const nav = <>
-    <li><NavLink to={'/'} style={({ isActive }) => ({
+    <li className="text-xl font-semibold"><NavLink to={'/'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })}>Home</NavLink></li>
 
    {
-    user ?"":<div className="flex">  <li>
+    user ?"":<div className="lg:flex">  <li className="text-xl font-semibold">
     <NavLink to={'/register'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })}>Register</NavLink>
   </li>
-  <li><NavLink to={'/login'} style={({ isActive }) => ({
-    background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
-  })} >Log In</NavLink></li></div>
+ </div>
    }
-    {user && <div className="lg:flex"> <li><NavLink to={'/user'} style={({ isActive }) => ({
+    {user && <div className="lg:flex"> <li className="text-xl font-semibold"><NavLink to={'/user'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })} >User Profile</NavLink></li>
-      <li><NavLink to={'/update'} style={({ isActive }) => ({
+      <li className="text-xl font-semibold"><NavLink to={'/update'} style={({ isActive }) => ({
         background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
       })} >Update Profile</NavLink></li></div>}
   </>
@@ -63,11 +61,11 @@ const Navbar = () => {
 
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
           </div>
-          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[5] p-2 shadow bg-base-100 rounded-box w-52">
             {nav}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"><img className="w-10 h-full" src="/logo2-removebg-preview.png" alt="" /> LivingSpaces</a>
+        <a className="btn btn-ghost text-xl"><img className="w-10 h-full" src="/logo2-removebg-preview.png" alt="" />  <span className="bg-gradient-to-r from-yellow-500 to-indigo-500 text-transparent bg-clip-text">Living</span><span className="bg-gradient-to-r from-green-500 to-blue-500 text-transparent bg-clip-text"> Spaces</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -79,9 +77,9 @@ const Navbar = () => {
           user ? <div className="  -ml-[50px] tooltip hover:tooltip-open tooltip-bottom z-30" data-tip={user.displayName}  ><img className="rounded-[50%] w-[50px] bg-white " src={user.photoURL} alt="" /></div> : ''
         }
       </div>
-      <div className="navbar-end  w-[170px]">
+      <div className="navbar-end  w-[120px] ml-4">
         {
-          user ? <Link ><button onClick={() => signOutt()} className="btn">Log out</button></Link> : <Link to={'/login'}><button>Log in</button></Link>
+          user ? <Link ><button onClick={() => signOutt()} className="btn font-bold bg-orange-400 p-2 btn text-white justify-center flex rounded-xl w-[100px]">Log out</button></Link> : <Link to={'/login'}><button className="btn font-bold bg-orange-400 p-2  text-white justify-center flex rounded-xl w-[100px]">Log in</button></Link>
         }
       </div>
       {/* <Toaster></Toaster> */}

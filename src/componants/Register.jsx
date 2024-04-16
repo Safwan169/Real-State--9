@@ -115,13 +115,13 @@ const Register = () => {
                 <title>Register </title>
             </Helmet>
 
-            <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className="animate__animated animate__bounceInDown animate__delay-0.99s hero-content flex-col lg:flex-row-reverse">
 
                 <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Name</span>
+                                <span  className="label-text">Name</span>
                             </label>
                             <input type="text" name='name' placeholder="Your Name" className="input input-bordered" required />
                             <label className="label">

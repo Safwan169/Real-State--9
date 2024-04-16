@@ -10,7 +10,7 @@ const User = () => {
     }
 
    else return (
-        <div className='flex justify-center'>
+        <div className='flex text-center  justify-center mx-auto my-10  shadow-2xl w-svw lg:w-[375px]  lg:pl-0  rounded-2xl mt-4 lg:mt-0'>
             <div className="card w-96 my-10 pt-4 glass">
                 <figure><img className='rounded-[50%] w-[150px]' src={user.photoURL } alt="car!" /></figure>
                 <div className="card-body">

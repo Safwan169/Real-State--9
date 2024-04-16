@@ -17,7 +17,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import PrivateRoute from './componants/PrivateRoute.jsx';
 import User from './componants/User.jsx';
 import Update from './componants/Update.jsx';
-import Privat2 from './componants/Private2.jsx';
 import Private2 from './componants/Private2.jsx';
 
 
@@ -57,6 +56,7 @@ const router = createBrowserRouter([
 
       element: <PrivateRoute> <Update></Update> </PrivateRoute>
     }
+    
     ]
 
   },

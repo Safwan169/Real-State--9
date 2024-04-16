@@ -29,6 +29,15 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(() => {
                 navigate('/')
+                toast.success('You have successfully Log In',{
+                    position:'top-center',
+                    style:{
+                        marginTop:'80px',
+                    marginLeft:'10px',
+
+                    border:'1px solid green',
+                    
+                }})
             })
             .catch((error) => {
                 console.log(error.message)
@@ -52,6 +61,15 @@ const Login = () => {
         signInWithPopup(auth, provider)
             .then(() => {
                 navigate('/')
+                toast.success('You have successfully Log In',{
+                    position:'top-center',
+                    style:{
+                        marginTop:'80px',
+                    marginLeft:'10px',
+
+                    border:'1px solid green',
+                    
+                }})
                 
             })
             .catch((error) => {
@@ -99,38 +117,38 @@ const Login = () => {
             <Helmet>
                 <title>Log In </title>
             </Helmet>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row-reverse">
+            <div className=" hero min-h-screen bg-base-200">
+                <div className="animate__animated animate__bounceInDown animate__delay-0.99s animate-bounceInUp hero-content flex-col lg:flex-row-reverse">
 
                     <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">
 
-                                <label className="label">
+                                <label data-aos="fade-left" className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input data-aos="fade-right" type="email" name='email' placeholder="email" className="input input-bordered" required />
                                 {/* {
                                 ok && <p className=' ml-3 text-red-500'>{ok}</p>
                             } */}
                             </div>
                             <div className="form-control">
-                                <label className="label">
+                                <label data-aos="fade-right" className="label">
                                     <span className="label-text">Password</span>
                                 </label>
 
-                                <div className='flex'>
-                                    <input type={eye ? 'text' : 'password'} name='password' placeholder="password" className="input w-full input-bordered" required /><div className='absolute mt-4 left-[325px]'>{eye ? <p onClick={() => setEye(!eye)}><FaEyeSlash /></p> : <p onClick={() => setEye(!eye)}><FaEye /></p>}</div>
+                                <div data-aos="fade-left" className='flex'>
+                                    <input data-aos="fade-left" type={eye ? 'text' : 'password'} name='password' placeholder="password" className="input w-full input-bordered" required /><div data-aos="zoom-in" className='absolute mt-4 left-[325px]'>{eye ? <p onClick={() => setEye(!eye)}><FaEyeSlash /></p> : <p onClick={() => setEye(!eye)}><FaEye /></p>}</div>
 
                                 </div>
                                 {/* {
                                 okk && <p className=' ml-2 text-red-500'>{okk}</p>
                             } */}
 
-                                <p className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Register </Link></p>
+                                <p data-aos="fade-right" className='mt-6 ml-3'>New to LivingSpaces <Link className='ml-2 text-blue-500 underline font-semibold hover:text-blue-600' to={'/register'} >Register </Link></p>
 
                             </div>
-                            <div className="form-control mt-4">
+                            <div data-aos="fade-left" className="form-control mt-4">
                                 <button className="btn btn-primary">Log In</button>
 
                             </div>
@@ -142,9 +160,9 @@ const Login = () => {
 
                             </div>
                            
-                            <div className="flex mt-4 justify-around">
-                                <button onClick={() => google()} className="btn bg-red-500 text-white font-semibold"><FaGoogle />+ Google</button>
-                                <button onClick={() => git()} className="btn bg-black text-white font-semibold "> <FaGithub /> GitHub</button>
+                            <div  className="flex mt-4 justify-around">
+                               <span data-aos="fade-right"> <button  data-aos="fade-left" onClick={() => google()} className="btn bg-red-500 text-white font-semibold"><FaGoogle />+ Google</button></span>
+                               <span data-aos="fade-left"> <button data-aos="fade-right" onClick={() => git()} className="btn bg-black text-white font-semibold "> <FaGithub /> GitHub</button></span>
                                 {/* <button onClick={()=>fb()} className="btn bg-blue-500 text-white font-semibold "> fb</button> */}
 
                             </div>

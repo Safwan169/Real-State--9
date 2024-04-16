@@ -5,7 +5,12 @@ import { Navigate } from "react-router";
 
 const Private2 = ({children}) => {
     const data=useContext(myContext)
-    const {user}=data
+    const {user,loading}=data
+    if (loading) {
+      return <div className='flex justify-center my-16'> <span className="  loading loading-ring loading-lg"></span></div>
+
+      
+    }
     if (user) {
       return  <Navigate to={'/'}></Navigate>
         

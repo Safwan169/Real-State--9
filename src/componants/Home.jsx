@@ -35,9 +35,9 @@ const Home = () => {
   };
   return (
     <>
-      <Helmet>
-        <title>Home</title>
-      </Helmet>
+       <Helmet>
+            <title>LivingSpace | Home</title>
+          </Helmet>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}

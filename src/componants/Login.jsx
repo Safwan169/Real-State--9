@@ -114,9 +114,9 @@ const Login = () => {
 
 
         <div>
-            <Helmet>
-                <title>Log In </title>
-            </Helmet>
+             <Helmet>
+            <title>LivingSpace | Log In</title>
+          </Helmet>
             <div className=" hero min-h-screen bg-base-200">
                 <div className="animate__animated animate__bounceInDown animate__delay-0.99s  hero-content flex-col lg:flex-row-reverse">
 

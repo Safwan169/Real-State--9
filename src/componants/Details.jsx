@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { CiLocationOn } from 'react-icons/ci';
 import { FaChartArea, FaCheckCircle } from 'react-icons/fa';
 import { useLoaderData, useParams } from 'react-router';
@@ -12,6 +13,9 @@ const Details = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>LivingSpace | Details</title>
+            </Helmet>
             <div className=''>
                 <div className="hero min-h-screen bg-base-200">
                     <div className="hero-content flex-col lg:gap-10 my-6 lg:h-[500px] lg:flex-row">
@@ -39,13 +43,13 @@ const Details = () => {
                                 </div>
                                 <div className="  flex-col  lg:flex-col  md:flex-col md:items-start  gap-5 flex text-gray-500" >
                                     <span>
-                                    <p className="text-xl underline  text-start ml-4 mt-4 font-bold text-amber-500">Facilities</p>
+                                        <p className="text-xl underline  text-start ml-4 mt-4 font-bold text-amber-500">Facilities</p>
 
                                     </span>
                                     <span className='flex-row flex lg:flex-col md:flex-col  gap-6'>
-                                    <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[0]}</p>
-                                    <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[1]}</p>
-                                    <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[2]}</p>
+                                        <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[0]}</p>
+                                        <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[1]}</p>
+                                        <p className=" font-bold flex gap-2"><span className=" font-extrabold"><FaCheckCircle className="text-green-500 font-extrabold" /></span> {give.facilities[2]}</p>
 
                                     </span>
                                 </div>

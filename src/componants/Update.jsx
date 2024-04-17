@@ -3,6 +3,7 @@ import { updateProfile } from 'firebase/auth';
 import { myContext } from './All';
 import { auth } from './firebase.config';
 import toast from 'react-hot-toast';
+import { Helmet } from 'react-helmet-async';
 
 const Update = () => {
     const info = useContext(myContext)
@@ -49,6 +50,9 @@ const Update = () => {
   
     return (
         <div className="hero min-h-screen bg-base-200">
+          <Helmet>
+            <title>LivingSpace | Update</title>
+          </Helmet>
   <div className="animate__animated animate__bounceInDown animate__delay-0.99s w-full lg:w-[1000px] lg:h-[500px]   hero-content flex-col lg:flex-row-reverse">
  
     <div className="card shrink-0 w-full lg:w-[500px] lg:h-[500px] shadow-2xl bg-base-100">

@@ -54,7 +54,7 @@ const Estates = ({ data }) => {
                                     </div>
                                
                             </div>
-                          <div>
+                          <div data-aos="fade-up-right">
                           <p className="text-xl text-start ml-4 mt-4 font-bold text-amber-600">Facilities</p>
 
                           <div className="md:visible    lg:flex-row  md:flex-col md:items-start mt-4  flex text-gray-500" >

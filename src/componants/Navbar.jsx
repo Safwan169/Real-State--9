@@ -45,6 +45,11 @@ const Navbar = () => {
   </li>
  </div>
    }
+   <div className="navbar-end visible lg:hidden md:hidden w-[80px] ">
+        {
+          user ? <Link ><button onClick={() => signOutt()} className=" font-bold  p-1 btn  justify-center flex rounded-xl w-[80px]">Log out</button></Link> : <Link to={'/login'}><button className="btn font-bold p-1  justify-center flex rounded-xl w-[80px]">Log in</button></Link>
+        }
+      </div>
     {user && <div className="lg:flex"> <li className="text-xl font-semibold"><NavLink to={'/user'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
     })} >User Profile</NavLink></li>
@@ -69,7 +74,7 @@ const Navbar = () => {
             {nav}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"><img className="w-10 h-full" src="/logo2-removebg-preview.png" alt="" />  <span className="bg-gradient-to-r from-yellow-500 to-indigo-500 text-transparent bg-clip-text">Living</span><span className="bg-gradient-to-r from-green-500 to-blue-500 text-transparent bg-clip-text"> Spaces</span></a>
+        <a className="flex items-center text-xl"><img className="w-10 h-full" src="https://i.ibb.co/9GsgBJL/logo2.jpg" alt="" />  <span className="bg-gradient-to-r from-yellow-500 to-indigo-500 text-transparent bg-clip-text">Living</span><span className="bg-gradient-to-r from-green-500 to-blue-500 text-transparent bg-clip-text"> Spaces</span></a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -78,12 +83,12 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         {
-          user ? <div className="  -ml-[50px] tooltip hover:tooltip-open tooltip-bottom z-30" data-tip={user.displayName}  ><img className="rounded-[50%] w-[50px] bg-white " src={user.photoURL} alt="" /></div> : ''
+          user ? <div className="  -ml-[50px] tooltip hover:tooltip-open tooltip-bottom z-30" data-tip={user.displayName?user.displayName:"Not Available"}  ><img className="rounded-[50%] w-[50px] bg-white " src={user.photoURL} alt="" /></div> : ''
         }
       </div>
-      <div className="navbar-end  w-[120px] ml-4">
+      <div className="navbar-end lg:flex md:flex hidden    w-[120px] ml-4">
         {
-          user ? <Link ><button onClick={() => signOutt()} className="btn font-bold bg-orange-400 p-2 btn text-white justify-center flex rounded-xl w-[100px]">Log out</button></Link> : <Link to={'/login'}><button className="btn font-bold bg-orange-400 p-2  text-white justify-center flex rounded-xl w-[100px]">Log in</button></Link>
+          user ? <Link ><button onClick={() => signOutt()} className="font-bold bg-orange-400 p-2 btn text-white justify-center  rounded-xl w-[100px]">Log out</button></Link> : <Link to={'/login'}><button className=" btn font-bold bg-orange-400 p-2  text-white justify-center  rounded-xl w-[100px]">Log in</button></Link>
         }
       </div>
       {/* <Toaster></Toaster> */}

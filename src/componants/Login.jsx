@@ -118,7 +118,7 @@ const Login = () => {
                 <title>Log In </title>
             </Helmet>
             <div className=" hero min-h-screen bg-base-200">
-                <div className="animate__animated animate__bounceInDown animate__delay-0.99s animate-bounceInUp hero-content flex-col lg:flex-row-reverse">
+                <div className="animate__animated animate__bounceInDown animate__delay-0.99s  hero-content flex-col lg:flex-row-reverse">
 
                     <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">

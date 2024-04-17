@@ -54,7 +54,7 @@
         "status": "sale",
         "area": "1200 sq ft",
         "location": "University District, Collegeland",
-        "facilities": ["study lounge", "shared kitchen", "laundry facilities"],
+        "facilities": ["study lounge", " kitchen", "laundry "],
         "image": "https://i.ibb.co/vmqxm3w/ap22.jpg"
       }
     ,
@@ -68,7 +68,7 @@
           "status": "sale",
           "area": "1800 sq ft",
           "location": "Arts District, Cityscape",
-          "facilities": ["modern kitchen", "walk-in closet", "private balcony"],
+          "facilities": [" kitchen", "walk-in closet", " balcony"],
           "image": "https://i.ibb.co/4PcyCcc/ap.webp"
         }
       

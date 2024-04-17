@@ -18,12 +18,15 @@ import PrivateRoute from './componants/PrivateRoute.jsx';
 import User from './componants/User.jsx';
 import Update from './componants/Update.jsx';
 import Private2 from './componants/Private2.jsx';
+import Error from './Error.jsx';
+import About from './componants/About.jsx';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Router></Router>,
+    errorElement:<Error></Error>,
     children: [{
       path: "/",
       loader: () => fetch("/Estates.json"),
@@ -55,6 +58,11 @@ const router = createBrowserRouter([
       path: "/update",
 
       element: <PrivateRoute> <Update></Update> </PrivateRoute>
+    }
+    , {
+      path: "/about",
+
+      element: <PrivateRoute> <About></About> </PrivateRoute>
     }
     
     ]

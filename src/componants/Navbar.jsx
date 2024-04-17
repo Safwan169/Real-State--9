@@ -50,7 +50,11 @@ const Navbar = () => {
     })} >User Profile</NavLink></li>
       <li className="text-xl font-semibold"><NavLink to={'/update'} style={({ isActive }) => ({
         background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
-      })} >Update Profile</NavLink></li></div>}
+      })} >Update Profile</NavLink></li>
+       <li className="text-xl font-semibold"><NavLink to={'/about'} style={({ isActive }) => ({
+        background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
+      })} >About Us</NavLink></li>
+      </div>}
   </>
   return (
     <div className="navbar bg-base-100">

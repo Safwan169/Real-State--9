@@ -49,10 +49,10 @@ const Update = () => {
   
     return (
         <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row-reverse">
+  <div className="animate__animated animate__bounceInDown animate__delay-0.99s w-full lg:w-[1000px] lg:h-[500px]   hero-content flex-col lg:flex-row-reverse">
  
-    <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-      <form onSubmit={handleUpdate} className="card-body">
+    <div className="card shrink-0 w-full lg:w-[500px] lg:h-[500px] shadow-2xl bg-base-100">
+      <form onSubmit={handleUpdate} className="card-body  flex  justify-center">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>

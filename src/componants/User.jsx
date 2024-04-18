@@ -14,7 +14,7 @@ const User = () => {
     else return (
         <div className='bg-base-200 md:p-10 lg:p-10'>
             <Helmet>
-                <title>LivingSpace | Profile</title>
+                <title>LivingSpaces | Profile</title>
             </Helmet>
             <div className=" animate__animated animate__bounceInUp animate__delay-0.99s mt-10   card w-full  flex  mx-auto justify-center border-2  shadow-2xl  lg:w-[500px] h-[600px] my-10 pt-4  ">
                 <div className='text-wrap overflow-ellipsis'>

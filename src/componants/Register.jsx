@@ -116,7 +116,7 @@ const Register = () => {
 
 
             <Helmet>
-                <title>LivingSpace | Register</title>
+                <title>LivingSpaces | Register</title>
             </Helmet>
 
             <div className="animate__animated animate__bounceInDown animate__delay-0.99s hero-content flex-col lg:flex-row-reverse">

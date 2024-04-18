@@ -5,6 +5,7 @@ const Anotherlogin = () => {
     const info = useContext(myContext)
 
     const {  google } = info
+    console.log(google)
 
   
     return (

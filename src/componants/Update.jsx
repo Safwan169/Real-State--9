@@ -51,7 +51,7 @@ const Update = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
           <Helmet>
-            <title>LivingSpace | Update</title>
+            <title>LivingSpaces | Update</title>
           </Helmet>
   <div className="animate__animated animate__bounceInDown animate__delay-0.99s w-full lg:w-[1000px] lg:h-[500px]   hero-content flex-col lg:flex-row-reverse">
  

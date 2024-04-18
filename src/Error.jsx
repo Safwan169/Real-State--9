@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useRouteError } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -6,6 +7,9 @@ const Error = () => {
     const error=useRouteError()
     return (
         <div className='flex-col h-svh  font-bold  flex justify-center gap-5 text-center text-3xl '>
+            <Helmet>
+                <title>LivingSpaces | Error</title>
+            </Helmet>
        Oops! Something went wrong.
         <p className=''>{error.status}</p>
         <p>{error.statusText}</p>

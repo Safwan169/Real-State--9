@@ -14,7 +14,7 @@ const Details = () => {
     return (
         <div>
             <Helmet>
-                <title>LivingSpace | Details</title>
+                <title>LivingSpaces | Details</title>
             </Helmet>
             <div className=''>
                 <div className="hero min-h-screen bg-base-200">

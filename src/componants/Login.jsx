@@ -11,6 +11,8 @@ import { FaGithub } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
 import { FaEye } from "react-icons/fa6";
 import { FaEyeSlash } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+
 
 
 const Login = () => {
@@ -122,12 +124,15 @@ const Login = () => {
 
                     <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
+                        <p className='lg:text-4xl  md:text-4xl text-2xl mb-5 pb-4  border-b border-black font-semibold flex '>Sign in</p>
+                        
+
                             <div className="form-control">
 
                                 <label data-aos="fade-left" className="label">
                                     <span className="label-text">Email</span>
                                 </label>
-                                <input data-aos="fade-right" type="email" name='email' placeholder="email" className="input input-bordered" required />
+                                <input data-aos="fade-right" type="email" name='email' placeholder='Email' className="input input-bordered" required />
                                 {/* {
                                 ok && <p className=' ml-3 text-red-500'>{ok}</p>
                             } */}

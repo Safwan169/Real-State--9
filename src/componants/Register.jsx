@@ -123,6 +123,7 @@ const Register = () => {
 
                 <div className="card shrink-0 w-[500px] max-w-sm shadow-2xl bg-base-100">
                     <form onSubmit={handleSubmit} className="card-body">
+                        <p className='lg:text-4xl  md:text-4xl text-2xl mb-5 pb-4  border-b border-black font-semibold  '>Create account</p>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>

@@ -6,6 +6,7 @@ import { getAuth, signOut } from "firebase/auth";
 import toast, { Toaster } from "react-hot-toast";
 import { auth } from "./firebase.config";
 
+
 const Navbar = () => {
 
   const signOutt = () => {
@@ -52,7 +53,7 @@ const Navbar = () => {
       </div>
     {user && <div className="lg:flex"> <li className="text-xl font-semibold"><NavLink to={'/user'} style={({ isActive }) => ({
       background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
-    })} >User Profile</NavLink></li>
+    })} >My Profile</NavLink></li>
       <li className="text-xl font-semibold"><NavLink to={'/update'} style={({ isActive }) => ({
         background: isActive ? "white" : "", color: isActive ? "#1bc91b" : "black"
       })} >Update Profile</NavLink></li>

@@ -25,8 +25,8 @@ const User = () => {
                             <p className='font-semibold text-xl h-[40px] mb-0 text-center'>E-Mail : {user.email?user.email:'Not Available'}</p>
 
                         </div>
-                        <div className="  card-actions text-center flex-1  h-[50px]">
-                            <p className='font-semibold  lg:max-w-[480px] md:w-[480px] flex px-2 justify-center text-wrap text-center'><span className=' flex font-bold'>PhotoURL   <span className='block'>  :</span></span> <span className='w-full text-wrap  overflow-hidden overflow-ellipsis max-w-[500px] block flex-wrap'> {user.photoURL}</span></p>
+                        <div className="  card-actions text-center flex-1 mt-6 lg:mt-0 md:mt-0 h-[50px]">
+                            <p className='font-semibold  lg:max-w-[480px] md:w-[480px] flex px-2 justify-center text-wrap text-center'><span className=' flex font-bold'>PhotoURL   <span className='block'>  :</span></span> <span className='text-wrap  overflow-hidden overflow-ellipsis max-w-[500px] block flex-wrap'> {user.photoURL}</span></p>
 
                         </div>
                         <div className=' w-full  flex justify-end '>

@@ -12,7 +12,6 @@ import Register from './componants/Register.jsx';
 import Login from './componants/Login.jsx';
 import Details from './componants/Details.jsx';
 import All from './componants/All.jsx';
-import Anotherlogin from './componants/Anotherlogin.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import PrivateRoute from './componants/PrivateRoute.jsx';
 import User from './componants/User.jsx';
@@ -44,12 +43,7 @@ const router = createBrowserRouter([
       path: "/login",
       element: <Private2><Login></Login></Private2>
     }, 
-    , {
-      path: "/an",
-
-      element: <Anotherlogin></Anotherlogin>
-    }
-    , {
+     {
       path: "/user",
 
       element: <PrivateRoute> <User></User> </PrivateRoute>
